@@ -28,3 +28,8 @@ def draw_keypoints(frame):
         )
 
     return annotated_image
+
+def get_keypoints(frame):
+    results = hands.process(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+
+    return results.multi_hand_landmarks
